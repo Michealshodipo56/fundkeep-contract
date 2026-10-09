@@ -1,0 +1,9 @@
+{
+  "network": "testnet",
+  "networkPassphrase": "Test SDF Network ; September 2015",
+  "rpcUrl": "https://soroban-testnet.stellar.org",
+  "contractId": "CBYUMUNDBGT5JTYX62SSFH5NTK2ELLRT2PP3LLZOI757JB4BULDDDFAH",
+  "acceptedTokenContractId": "CCUWRYBOQTKMKTBLBJX5ZOZ2ZGCL7Z4ODNDB53DIPI4XMB4XBONY6G6X",
+  "explorerUrl": "https://stellar.expert/explorer/testnet/contract/CBYUMUNDBGT5JTYX62SSFH5NTK2ELLRT2PP3LLZOI757JB4BULDDDFAH",
+  "release": "v0.1.0"
+}

@@ -1,8 +1,12 @@
 # fundkeep-contract
 
-The Soroban smart contract behind [FundKeep](https://github.com/Michealshodipo56/fundkeep-app) — a non-custodial savings-goal contract on Stellar. One deployment handles every user and every goal; goals are differentiated by an auto-incrementing `goal_id`.
+The Soroban smart contract behind [FundKeep](https://github.com/fundkeep-web/fundkeep-app) — a non-custodial savings-goal contract on Stellar. One deployment handles every user and every goal; goals are differentiated by an auto-incrementing `goal_id`.
 
-A goal locks a target amount of a token (USDC on testnet) until either the target is reached or a deadline passes. There is no early withdrawal and no admin override — enforcement is entirely on-chain. See [`fundkeep-app/docs/contract`](https://github.com/Michealshodipo56/fundkeep-app/tree/main/docs/contract) for the full spec this implementation follows.
+A goal locks a target amount of a token (USDC on testnet) until either the target is reached or a deadline passes. There is no early withdrawal and no admin override — enforcement is entirely on-chain. See [`fundkeep-app/docs/contract`](https://github.com/fundkeep-web/fundkeep-app/tree/main/docs/contract) for the full spec this implementation follows.
+
+**Verified Testnet deployment:** [`CBYUM...DDFAH`](https://stellar.expert/explorer/testnet/contract/CBYUMUNDBGT5JTYX62SSFH5NTK2ELLRT2PP3LLZOI757JB4BULDDDFAH) · [deployment manifest](deployments/testnet.json) · [live app](https://fundkeep.vercel.app) · [documentation](https://entity-6.gitbook.io/fundkeep)
+
+> The contract is unaudited and must not be used with Mainnet funds.
 
 ## Repo Layout
 
@@ -37,6 +41,8 @@ stellar keys generate deployer --network testnet --fund
 ```
 
 The script builds, deploys, and prints the resulting contract ID and Testnet RPC settings. Configure a verified token SAC separately before setting `NEXT_PUBLIC_USDC_CONTRACT_ID` in `fundkeep-app`.
+
+The public submission deployment is recorded in [`deployments/testnet.json`](deployments/testnet.json). Do not replace its identifiers without verifying the new deployment on-chain and updating the app, indexer, SDK documentation and release notes together.
 
 ## Contract Interface
 

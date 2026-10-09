@@ -379,7 +379,10 @@ fn check_deadline_exactly_one_second_before_is_noop() {
     ctx.client.check_deadline(&goal_id);
 
     let goal = ctx.client.get_goal(&goal_id);
-    assert!(!goal.unlocked, "Goal must remain locked when timestamp < deadline");
+    assert!(
+        !goal.unlocked,
+        "Goal must remain locked when timestamp < deadline"
+    );
 }
 
 #[test]
@@ -429,4 +432,3 @@ fn check_deadline_after_already_unlocked_is_idempotent() {
     assert!(goal_after.unlocked);
     assert!(!goal_after.withdrawn);
 }
-
